@@ -2,12 +2,12 @@ import NetBalance from '../components/NetBalance'
 import TotalExpenses from '../components/TotalExpenses'
 import TotalIncome from '../components/TotalIncome'
 
-const IncomeExpenseSummary = () =>{
+const IncomeExpenseSummary = ({netBalance, totalIncome, totalExpenses}) =>{
     return(
         <>
-            <NetBalance />
-            <TotalIncome />
-            <TotalExpenses/>
+            <NetBalance netBalance={netBalance}/>
+            <TotalIncome totalIncome={totalIncome}/>
+            <TotalExpenses totalExpenses={totalExpenses}/>
         </>
     )
 }

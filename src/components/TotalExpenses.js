@@ -1,6 +1,6 @@
-const TotalExpenses = () =>{
+const TotalExpenses = ({totalExpenses}) =>{
     return(
-      <span>Total Expenses: $5,000</span>
+      <span>Total Expenses: {totalExpenses}</span>
     )
 }
 

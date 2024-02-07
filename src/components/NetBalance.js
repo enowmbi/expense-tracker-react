@@ -1,6 +1,6 @@
-const NetBalance = () =>{
+const NetBalance = ({netBalance}) =>{
     return(
-      <span>Balance: $5,000</span>
+      <span>Balance: {netBalance}</span>
     )
 }
 
