@@ -5,7 +5,7 @@ const NewTransactionForm = () =>{
        <label>Income</label>
        <input type='radio' name="inc" />
        <label>Expense</label>
-       <input type="number" required />
+       <input type="number" required placeholder="Enter amount"/>
        <button>Add</button>
       </form>
    )
