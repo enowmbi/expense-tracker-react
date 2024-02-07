@@ -3,6 +3,7 @@ import Header from './components/Header'
 import IncomeExpenseSummary from './components/IncomeExpenseSummary'
 import NewTransactionForm from './components/NewTransactionForm'
 import Search from './components/Search'
+import Transactions from './components/Transactions'
 import Footer from './components/Footer'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <IncomeExpenseSummary />
       <NewTransactionForm />
       <Search />
+      <Transactions transactions={[]}/>
       <Footer />
     </div>
   );
