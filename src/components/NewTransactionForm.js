@@ -1,12 +1,36 @@
-const NewTransactionForm = () =>{
+const NewTransactionForm = ({
+    handleAddTransaction, 
+    amount, 
+    setAmount, 
+    transactionType, 
+    setTransactionType,
+}) =>{
    return(
-      <form>
-       <input type='radio' checked name="inc" />
+      <form onSubmit={(e) => handleAddTransaction(e)}>
+       <input
+           type='radio' 
+           name="inc" 
+           value='INCOME'
+           checked={"INCOME"===transactionType}
+           onChange={(e)=>setTransactionType(e.target.value)}
+       />
        <label>Income</label>
-       <input type='radio' name="inc" />
+       <input
+           type='radio' 
+           name="inc" 
+           value='EXPENSE'
+           checked={"EXPENSE"===transactionType}
+           onChange={(e)=>setTransactionType(e.target.value)}
+       />
        <label>Expense</label>
-       <input type="number" required placeholder="Enter amount"/>
-       <button>Add</button>
+       <input
+           type="number"
+           required 
+           placeholder="Enter amount"
+           value={amount}
+           onChange={(e) => setAmount(e.target.value)}
+       />
+       <button>Add Transaction</button>
       </form>
    )
 }
