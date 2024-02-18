@@ -1,7 +1,7 @@
 const Search = () =>{
  return(
     <form>
-     <input type="text" placeholder="Search transactions" />
+     <input id="search" type="text" placeholder="Search transactions" />
      </form>
  )
 

@@ -4,6 +4,8 @@ const NewTransactionForm = ({
     setAmount, 
     transactionType, 
     setTransactionType,
+    description,
+    setDescription
 }) =>{
    return(
       <form onSubmit={(e) => handleAddTransaction(e)}>
@@ -23,6 +25,14 @@ const NewTransactionForm = ({
            onChange={(e)=>setTransactionType(e.target.value)}
        />
        <label>Expense</label>
+       <label>Description</label>
+       <textarea
+           required 
+           placeholder="Enter transaction description"
+           value={description}
+           onChange={(e) => setDescription(e.target.value)}
+       />
+       <label>Amount</label>
        <input
            type="number"
            required 
