@@ -1,6 +1,6 @@
 const TotalIncome = ({totalIncome}) =>{
     return(
-      <span>Total Income: {totalIncome}</span>
+      <div id="total-income">Total Income: {totalIncome}</div>
     )
 }
 

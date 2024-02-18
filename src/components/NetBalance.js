@@ -1,6 +1,6 @@
 const NetBalance = ({netBalance}) =>{
     return(
-      <span>Balance: {netBalance}</span>
+      <div id="balance">Balance: {netBalance}</div>
     )
 }
 
