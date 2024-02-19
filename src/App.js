@@ -35,10 +35,14 @@ function App() {
         }
         transactionType === "INCOME" ? 
             setTotalIncome((prev) => prev + parseFloat(amount)) : setTotalExpenses((prev) => prev + parseFloat(amount))  
-        setNetBalance(totalIncome - totalExpenses)
+        const balance = totalIncome - totalExpenses
+        setNetBalance(parseFloat(balance))
         const transactionList = [...transactions, newTransaction]
         localStorage.setItem('transactions', JSON.stringify(transactionList))
         setTransactions(transactionList)
+        setDescription('')
+        setAmount(0)
+        setTransactionType('EXPENSE')
 
         navigate('/')
     }
@@ -47,8 +51,10 @@ function App() {
 
     }
 
-    const handleDeleteTransaction = () =>{
-
+    const handleDeleteTransaction = (id) =>{
+        const filteredTransactions = transactions.filter((transaction) => transaction.id !== id)
+        localStorage.setItem('transactions', JSON.stringify(filteredTransactions))
+        setTransactions(filteredTransactions)
     }
 
   return (
