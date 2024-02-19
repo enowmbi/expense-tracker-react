@@ -5,6 +5,7 @@ import NewTransactionForm from './components/NewTransactionForm'
 import Footer from './components/Footer'
 import { useState, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
     const [netBalance, setNetBalance] = useState(0)
@@ -38,11 +39,11 @@ function App() {
         setTransactions(transactionList)
     }
 
-    const handleEditTransaction =()=>{
+    const handleEditTransaction = () =>{
 
     }
 
-    const handleDeleteTransaction =()=>{
+    const handleDeleteTransaction = () =>{
 
     }
 
@@ -50,25 +51,36 @@ function App() {
     <div className="App">
       <Header title="Expense Tracker" />
 
-      <Home 
-          netBalance={netBalance}
-          totalIncome={totalIncome}
-          totalExpenses={totalExpenses}
-          handleEditTransaction={handleEditTransaction}
-          handleDeleteTransaction={handleDeleteTransaction}
-          transactions={transactions}
-      />
-
-          <NewTransactionForm
-              description={description}
-              setDescription={setDescription}
-              amount={amount}
-              setAmount={setAmount}
-              handleAddTransaction={handleAddTransaction} 
-              transactionType={transactionType}
-              setTransactionType={setTransactionType}
+      <Routes>
+          <Route
+               path='/'
+               element={
+                  <Home 
+                      netBalance={netBalance}
+                      totalIncome={totalIncome}
+                      totalExpenses={totalExpenses}
+                      handleEditTransaction={handleEditTransaction}
+                      handleDeleteTransaction={handleDeleteTransaction}
+                      transactions={transactions}
+                  />
+               }
           />
 
+          <Route 
+              path='/transactions/new'
+              element={
+                  <NewTransactionForm
+                      description={description}
+                      setDescription={setDescription}
+                      amount={amount}
+                      setAmount={setAmount}
+                      handleAddTransaction={handleAddTransaction} 
+                      transactionType={transactionType}
+                      setTransactionType={setTransactionType}
+                  />
+              }
+         />
+       </Routes>
       <Footer />
     </div>
   );

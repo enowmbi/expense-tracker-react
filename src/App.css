@@ -47,6 +47,7 @@ svg{
    padding: 5px;
    border-left: 8px solid black;
    border-right: 8px solid black;
+   margin-top: 25px;
 }
 
 #summary{
@@ -82,6 +83,74 @@ svg{
     border-left: 8px solid red;
     border-right: 8px solid red;
     font-size: 18px;
+}
+
+#add-new-transaction{
+    border: 1px solid black;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 60px;
+    color: white;
+    background-color: #282c34;
+    text-decoration: none;
+}
+
+#add-new-transaction:hover{
+   background-color: white;
+   color: #282c34;
+}
+
+#new-transaction-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#new-transaction-form input[type='number']{
+    width: 40%;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+#new-transaction-form textarea{
+    width: 40%;
+    margin-bottom: 20px;
+    font-size: 20px;
+    height: 65px;
+}
+
+#radio-buttons{
+    /* border: 1px solid black; */
+    /* border-radius: 50px; */
+    /* border-left: 8px solid green; */
+    /* border-right: 8px solid red; */
+    font-size: 18px;
+    /* width: 40%; */
+}
+
+#radio-buttons input{
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+#new-transaction-form button{
+   margin-top: 30px;
+   border: 1px solid black;
+   border-radius: 50px;
+   background-color: #282c34;
+   color: white;
+   width: 20%;
+   font-size: 20px;
+   padding-bottom: 5px;
+   padding-top: 5px;
+}
+
+#new-transaction-form button:hover{
+   background-color: white;
+   color: #282c34;
 }
 
 

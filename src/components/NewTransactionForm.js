@@ -8,23 +8,7 @@ const NewTransactionForm = ({
     setDescription
 }) =>{
    return(
-      <form onSubmit={(e) => handleAddTransaction(e)}>
-       <input
-           type='radio' 
-           name="inc" 
-           value='INCOME'
-           checked={"INCOME"===transactionType}
-           onChange={(e)=>setTransactionType(e.target.value)}
-       />
-       <label>Income</label>
-       <input
-           type='radio' 
-           name="inc" 
-           value='EXPENSE'
-           checked={"EXPENSE"===transactionType}
-           onChange={(e)=>setTransactionType(e.target.value)}
-       />
-       <label>Expense</label>
+      <form id="new-transaction-form" onSubmit={(e) => handleAddTransaction(e)}>
        <label>Description</label>
        <textarea
            required 
@@ -40,6 +24,24 @@ const NewTransactionForm = ({
            value={amount}
            onChange={(e) => setAmount(e.target.value)}
        />
+       <div id="radio-buttons">
+           <input
+               type='radio' 
+               name="inc" 
+               value='INCOME'
+               checked={"INCOME"===transactionType}
+               onChange={(e)=>setTransactionType(e.target.value)}
+           />
+           <label>Income</label>
+           <input
+               type='radio' 
+               name="inc" 
+               value='EXPENSE'
+               checked={"EXPENSE"===transactionType}
+               onChange={(e)=>setTransactionType(e.target.value)}
+           />
+           <label>Expense</label>
+       </div>
        <button>Add Transaction</button>
       </form>
    )
