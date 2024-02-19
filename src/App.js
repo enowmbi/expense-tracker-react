@@ -5,7 +5,8 @@ import NewTransactionForm from './components/NewTransactionForm'
 import Footer from './components/Footer'
 import { useState, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import { format } from 'date-fns'
 
 function App() {
     const [netBalance, setNetBalance] = useState(0)
@@ -15,6 +16,7 @@ function App() {
     const [description, setDescription] = useState('')
     const [amount, setAmount] = useState(0)
     const [transactionType, setTransactionType] = useState('EXPENSE')
+    const navigate = useNavigate()
 
     useEffect(() =>{
         setTransactions(JSON.parse(localStorage.getItem('transactions')) || [])
@@ -26,7 +28,7 @@ function App() {
         const newDate = new Date()
         const newTransaction = {
             id: uuidv4(), 
-            date: newDate, 
+            date: format(newDate,'yyyy-MM-dd'), 
             description: description, 
             amount: amount, 
             transactionType: transactionType 
@@ -37,6 +39,8 @@ function App() {
         const transactionList = [...transactions, newTransaction]
         localStorage.setItem('transactions', JSON.stringify(transactionList))
         setTransactions(transactionList)
+
+        navigate('/')
     }
 
     const handleEditTransaction = () =>{
