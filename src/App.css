@@ -102,20 +102,20 @@ svg{
    color: #282c34;
 }
 
-#new-transaction-form{
+#new-transaction-form, #edit-transaction-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#new-transaction-form input[type='number']{
+#new-transaction-form input[type='number'], #edit-transaction-form input[type='number']{
     width: 40%;
     margin-bottom: 20px;
     font-size: 18px;
 }
 
-#new-transaction-form textarea{
+#new-transaction-form textarea, #edit-transaction-form textarea{
     width: 40%;
     margin-bottom: 20px;
     font-size: 15px;
@@ -136,7 +136,7 @@ svg{
     margin-right: 10px;
 }
 
-#new-transaction-form button{
+#new-transaction-form button, #edit-transaction-form button{
    margin-top: 30px;
    border: 1px solid black;
    border-radius: 50px;
@@ -148,9 +148,7 @@ svg{
    padding-top: 5px;
 }
 
-#new-transaction-form button:hover{
+#new-transaction-form button:hover, #edit-transaction-form button:hover{
    background-color: white;
    color: #282c34;
 }
-
-

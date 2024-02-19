@@ -5,7 +5,7 @@ const TransactionRow =({transaction, handleEditTransaction, handleDeleteTransact
     return(
         <tr>
             <td>{transaction.id}</td>
-            <td>{transaction.date?.toString()}</td>
+            <td>{transaction.transactionDate?.toString()}</td>
             <td>{transaction.transactionType}</td>
             <td>{transaction.description}</td>
             <td>{transaction.amount}</td>
